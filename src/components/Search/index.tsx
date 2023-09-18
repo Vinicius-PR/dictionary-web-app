@@ -33,13 +33,14 @@ export default function Search({ handleSetResult, handleNoDefinitionFound }: Sea
   }
   
   return (
-    <SearchContainer $isemptyerror={isEmpty}>
+    <SearchContainer $isemptyerror={isEmpty} role="search">
       <form 
         action="#"
         onSubmit={(e) => {
           e.preventDefault()
           handleSubmit()
         }}
+        aria-label="Form. Put word to search"
       >
         <input 
           onChange={(e) => {

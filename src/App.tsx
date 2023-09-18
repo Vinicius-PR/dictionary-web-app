@@ -116,22 +116,20 @@ function App() {
   return (
     <ThemeProvider theme={theme === 'light' ? lightTheme : darkTheme}>
       <GlobalStyle fontFamily={fontFamily} />
-      
-      <Header theme={theme} handleChangeTheme={handleChangeTheme} handleChangeFontFamily={handleChangeFontFamily} />
-      <Search handleSetResult={handleSetResult} handleNoDefinitionFound={handleNoDefinitionFound}/>
-      
-      {
-        result.word === undefined && wasFound === null ? (
-          <Welcome />
-        ) : (
-            wasFound === false ? (
-              <NoDefinitionFound notFoundResult={notFoundResult} />
-            ) : (
-              <Result result={result} />
-            )
-        )
-      }
-      
+        <Header theme={theme} handleChangeTheme={handleChangeTheme} handleChangeFontFamily={handleChangeFontFamily} />
+        <Search handleSetResult={handleSetResult} handleNoDefinitionFound={handleNoDefinitionFound}/>
+        
+        {
+          result.word === undefined && wasFound === null ? (
+            <Welcome />
+          ) : (
+              wasFound === false ? (
+                <NoDefinitionFound notFoundResult={notFoundResult} />
+              ) : (
+                <Result result={result} />
+              )
+          )
+        }
     </ThemeProvider>
   );
 }

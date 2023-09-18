@@ -11,7 +11,7 @@ export default function Result({ result } : ResultPorps) {
   const audioRef = useRef<HTMLAudioElement>(null)
 
   return (
-    <ResultContainer>
+    <ResultContainer role="main">
 
       <ResultHeader>
         <div>
