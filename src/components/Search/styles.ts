@@ -9,7 +9,7 @@ export const SearchContainer = styled.section<SearchContainerProps>`
   height: 4rem;
   border: 1px solid;
   border-radius: 16px;
-  padding: 0 1.5rem;
+  padding-right: 1.5rem;
   background-color: ${props => props.theme.colors.searchColorBack};
   margin-top: 3.2rem;
   border-color: ${props => props.$isemptyerror ? props.theme.colors.red : 'transparent'};
@@ -28,6 +28,7 @@ export const SearchContainer = styled.section<SearchContainerProps>`
       flex: 1;
       border: none;
       outline: none;
+      padding-left: 1.5rem;
       font-size:1.25rem; // 20px
       font-style: normal;
       font-weight: 700;

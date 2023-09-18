@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { SearchContainer, SpanError } from "./styles";
 import { NotFoundProps, SearchResultProps } from "../../App";
 
@@ -11,6 +11,7 @@ export default function Search({ handleSetResult, handleNoDefinitionFound }: Sea
 
   const [input, setInput] = useState('')
   const [isEmpty, setIsEmpty] = useState(false)
+  const inputRef = useRef<HTMLInputElement>(null)
 
   async function fetchDictionary(word: string) {
     const data = await fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${word}`)
@@ -20,6 +21,7 @@ export default function Search({ handleSetResult, handleNoDefinitionFound }: Sea
   }
 
   async function handleSubmit() {
+    setInput('')
     if (input === '') {
       setIsEmpty(true)
     } else {
@@ -39,6 +41,7 @@ export default function Search({ handleSetResult, handleNoDefinitionFound }: Sea
         onSubmit={(e) => {
           e.preventDefault()
           handleSubmit()
+          inputRef.current?.blur()
         }}
         aria-label="Form. Put word to search"
       >
@@ -46,7 +49,8 @@ export default function Search({ handleSetResult, handleNoDefinitionFound }: Sea
           onChange={(e) => {
             setInput(e.target.value)
             setIsEmpty(false)
-          }} 
+          }}
+          ref={inputRef}
           value={input} 
           placeholder="Search for any word…" 
           inputMode="text" 
