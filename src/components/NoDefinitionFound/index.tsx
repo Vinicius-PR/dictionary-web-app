@@ -8,7 +8,7 @@ interface NoDefinitionFoundProps {
 
 export default function NoDefinitionFound({notFoundResult}: NoDefinitionFoundProps) {
   return (
-    <NoDefinitionContainer>
+    <NoDefinitionContainer role="main">
       <img src={sadFaceImg} alt="Sad Face" />
       <h2>{notFoundResult.title}</h2>
       <p>{notFoundResult.message} {notFoundResult.resolution}</p>

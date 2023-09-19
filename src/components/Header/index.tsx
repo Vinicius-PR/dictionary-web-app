@@ -22,7 +22,7 @@ export default function Header({ theme, handleChangeTheme, handleChangeFontFamil
   }
   
   return (
-    <HeaderContainer role="heading">
+    <HeaderContainer aria-level={1} role="heading">
       <img src={logoImg} alt="Logo" />
       <InputsContainer>
 

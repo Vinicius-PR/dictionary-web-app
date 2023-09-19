@@ -44,6 +44,7 @@ export default function Search({ handleSetResult, handleNoDefinitionFound }: Sea
           inputRef.current?.blur()
         }}
         aria-label="Form. Put word to search"
+        name="dic-form"
       >
         <input 
           onChange={(e) => {
