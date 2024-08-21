@@ -15,7 +15,7 @@ export default function Result({ result } : ResultPorps) {
 
       <ResultHeader>
         <div>
-          <h1>{result.word}</h1>
+          <h1 data-testid="result-word">{result.word}</h1>
           {
             result.phonetics[0].text !== '' ? (
               <span>{result.phonetics[0].text}</span>
